@@ -1,0 +1,19 @@
+syntax = "proto3";
+package email;
+
+option go_package = "./pkg/proto";
+
+service EmailService {
+    rpc SendEmail(SendEmailRequest) returns (SendEmailResponse) {}
+  }
+
+message SendEmailRequest {
+    string user = 1;
+    string fileSent = 2;
+    string fileSender = 3;
+  }
+
+  message SendEmailResponse {
+    string message = 1;
+  }
+  
