@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: filebox-email-service
+spec:
+  selector:
+    matchLabels:
+      app: filebox-email-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: filebox-email-service
+    spec:
+      containers:
+        - name: filebox-email-service
+          image: shulaa/filebox-email-service:v1
+          ports:
+            - containerPort: 50053
+              name: fb-email-service-port
