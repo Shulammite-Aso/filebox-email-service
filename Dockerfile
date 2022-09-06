@@ -8,14 +8,6 @@ COPY . ./
 
 RUN go mod download
 
-RUN go build -o /fb-email-service
-
-FROM scratch
-
-WORKDIR /
-
-COPY --from=build /fb-email-service /fb-email-service
-
 EXPOSE 50053
 
-CMD [ "/fb-email-service" ]
+ENTRYPOINT go run cmd/main.go
