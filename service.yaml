@@ -1,10 +1,10 @@
 apiVersion: v1 
 kind: Service 
 metadata: 
-  name: filebox-email-service-service 
+  name: filebox-email-service-service
 spec: 
   ports: 
     - port: 50053
-      targetPort: fb-email-service-port
+      targetPort: fb-email-port
   selector:
     app: filebox-email-service
